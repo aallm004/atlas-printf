@@ -8,11 +8,11 @@
  * @f: The function associated
  */
 
-typedef (struct op
+typedef struct op
 {
 	char *op;
 	char *(f)(const char *format, int i);
-}) op_t;
+} op_t;
 
 int _strlen(char *);
 int _printf(const char *format, ...);
