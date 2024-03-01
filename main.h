@@ -20,5 +20,6 @@ int _printf(const char *format, ...);
 char *op_char(va_list ap);
 char *op_string(va_list ap);
 char *op_percent(va_list ap);
+char *op_decimal(va_list ap);
 
 #endif
