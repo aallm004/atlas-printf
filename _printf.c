@@ -21,34 +21,19 @@ int _printf(const char *format, ...)
 
 	for (i = 0; i < len; i++)
 	{
-		if (*(ops[i].op) == format[0])
-			ops[i].f(format, i);
+		while (ops[x].op)
+		{
+			if (ops[x].op[0] == format[i] &&
+			ops[x].op[1] == format[i + 1])
+			{
+				_strcat(dest, ops[x].f(ap);
+				i++;
+				break;
+			}
+		}
+
 	}
 	va_end(ap);
 }
 
 
-
-
-
-/**
- * _strlen - returns the length of a string
- *
- * @s : int
- *
- * Return: the length of the string
- */
-
-int _strlen(char *s)
-{
-	int x;
-
-	x = 0;
-
-	while (s[x] != '\0')
-	{
-		x++;
-	}
-
-	return (x);
-}
