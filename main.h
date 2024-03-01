@@ -11,17 +11,20 @@
 typedef struct op
 {
 	char *op;
-	char *(*f)(va_list);
+	void *(*f)(va_list, char *);
 } op_t;
 
 
 int _strlenconst(const char *);
+int _strlen(char *);
 char *_strcat(char *, char *);
-int _printf(const char *format, ...);
-char *op_char(va_list ap);
-char *op_string(va_list ap);
-char *op_percent(va_list ap);
-char *op_decimal(va_list ap);
 char *_strcpy(char *dest, char *src);
+
+int _printf(const char *format, ...);
+
+void *op_char(va_list, char *);
+void *op_string(va_list, char *);
+void *op_percent(va_list, char *);
+void *op_decimal(va_list, char *);
 
 #endif

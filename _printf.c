@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			if (ops[x].op[0] == format[i] &&
 			ops[x].op[1] == format[i + 1])
 			{
-				_strcat(result, ops[x].f(ap));
+				ops[x].f(ap, result);
 				i++;
 				break;
 			}

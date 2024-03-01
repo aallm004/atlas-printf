@@ -11,20 +11,13 @@
  *
  */
 
-char *op_char(va_list ap)
+void *op_char(va_list ap, char *result)
 {
-	char result;
-	char *s;
+	char s = va_arg(ap, char);
 
-	s = malloc(sizeof(char) * 1);
-	if (s == NULL)
-		return (NULL);
+	result = _strcat(result, &s);
 
-	result = va_arg(ap, int);
-
-	 _strcpy(s, &result);
-	
-        return(s);
+	return (0);
 }
 
 /**
@@ -36,9 +29,13 @@ char *op_char(va_list ap)
  *
  */
 
-char *op_string(va_list ap)
+void *op_string(va_list ap, char *result)
 {
-        return(va_arg(ap, char *));
+        char *s = va_arg(ap, char *);
+
+	result = _strcat(result, s);
+
+	return (0);
 }
 
 /**
@@ -50,10 +47,13 @@ char *op_string(va_list ap)
  *
  */
 
-char *op_percent(va_list ap)
+void *op_percent(va_list ap, char *result)
 {
 	ap = ap;
-        return("%");
+
+	result = _strcat(result, "%");
+
+	return (0);
 }
 
 /**
@@ -65,16 +65,13 @@ char *op_percent(va_list ap)
  *
  */
 
-char *op_decimal(va_list ap)
+void *op_decimal(va_list ap, char *result)
 {
-	char *s;
+	char s[] = "x";
 
 	ap = ap;
-	s = malloc(2);
-	if (s == NULL)
-		return (NULL);
+	
+	result = _strcat(result, s);
 
-	s = _strcpy(s, "x");
-
-	return (s);
+	return (0);
 }
