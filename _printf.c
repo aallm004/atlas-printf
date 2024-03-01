@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 
 	result = malloc(sizeof(char) * len + 1);
 	if (result == NULL)
-		return (NULL);
+		return (0);
 
 	va_start(ap, format);
 
