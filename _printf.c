@@ -11,10 +11,17 @@
 int _printf(const char *format, ...)
 {
 	int i, x;
-	op_t ops;
 	int len;
 	va_list ap;
 	char *result;
+	op_t ops[] = {
+		{"%c", op_char},
+		{"%s", op_string},
+		{"%%", op_percent},
+		{"%d", op_decimal},
+		{"%i", op_decimal},
+		{NULL, NULL}
+	};
 
 	len = _strlenconst(format);
 
