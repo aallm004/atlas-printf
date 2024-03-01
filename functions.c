@@ -20,9 +20,9 @@ char *op_char(va_list ap)
 	if (s == NULL)
 		return (NULL);
 
-	result = va_arg(ap, char);
+	result = va_arg(ap, int);
 
-	_strcpy(s, result);
+	 _strcpy(s, &result);
 	
         return(s);
 }
@@ -52,6 +52,7 @@ char *op_string(va_list ap)
 
 char *op_percent(va_list ap)
 {
+	ap = ap;
         return("%");
 }
 
