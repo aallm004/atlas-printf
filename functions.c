@@ -23,7 +23,7 @@ char *op_char(va_list ap)
  *
  */
 
-char *op_string(valist ap)
+char *op_string(va_list ap)
 {
         return(va_arg(ap, char *));
 }
