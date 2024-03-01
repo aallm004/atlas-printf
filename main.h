@@ -16,6 +16,7 @@ typedef struct op
 
 int _strlen(char *);
 int _strlenconst(const char *);
+char *_strcat(char *, char *);
 int _printf(const char *format, ...);
 char *op_char(va_list ap);
 char *op_string(va_list ap);
