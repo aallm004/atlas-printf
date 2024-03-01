@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	int len;
 	va_list ap;
 
-	len = _strlen(*format);
+	len = _strlen(format);
 
 	va_start(ap, format);
 
