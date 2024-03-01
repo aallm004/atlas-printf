@@ -11,7 +11,7 @@
 typedef struct op
 {
 	char *op;
-	char *(f)(va_list);
+	char *(*f)(va_list);
 } op_t;
 
 int _strlen(char *);
