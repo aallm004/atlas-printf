@@ -11,7 +11,18 @@
 
 char *op_char(va_list ap)
 {
-        return(va_arg(ap, char));
+	char result;
+	char *s;
+
+	s = malloc(sizeof(char) * 1);
+	if (s == NULL)
+		return (NULL);
+
+	result = va_arg(ap, char);
+
+	_strcpy(s, result);
+	
+        return(s);
 }
 
 /**
