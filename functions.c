@@ -56,3 +56,25 @@ char *op_percent(va_list ap)
         return("%");
 }
 
+/**
+ * op_decimal- a function to return a decimal from a valist
+ *
+ * @ap:        the va list
+ *
+ * Return:     a string array of numbers from the va list
+ *
+ */
+
+char *op_decimal(va_list ap)
+{
+	char *s;
+
+	ap = ap;
+	s = malloc(2);
+	if (s == NULL)
+		return (NULL);
+
+	s = _strcpy(s, "x");
+
+	return (s);
+}
