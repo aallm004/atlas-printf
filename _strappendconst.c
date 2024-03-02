@@ -20,19 +20,21 @@ char *_strappendconst(char *dest, const char *src, int n)
 	while (*dest && (n > 0)) /* move dest ptr fwd until  null found */
 	{
 		dest++;
-		d++ /* keep track of how many we move forward */
+		d++; /* keep track of how many we move forward */
+		printf("moving forward in dest %s", dest);
 	}
 
 	for (; n > 0; n--)
 	{
 		*dest = *src;
 		dest++;
-		src++
+		src++;
 		d--;
 	}
 
 	dest += d; /* put things back where we found them.*/
 
+	printf("dest is returning with %s", dest);
 	return (dest);
 
 }

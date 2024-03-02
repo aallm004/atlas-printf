@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	int i, x;
-	int len;
+	int len, reslen;
 	va_list ap;
 	char *result;
 	op_t ops[] = {
@@ -34,8 +34,8 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (i < len)
 	{
-		x = 0;
-		while ((ops[x].op) && (i < len - 1))
+		x = 0; x=x;
+		while ((ops[x].op))
 		{
 			if ((ops[x].op[0] == format[i]) && (ops[x].op[1] == format[i + 1]))
 			{
@@ -46,17 +46,16 @@ int _printf(const char *format, ...)
 			x++;
 		}
 		if (ops[x].op == NULL)
-			result = _strncpy(result, (format + i), 1);
+			result = _strncatconst(result, (format + i), 1);
 
-	printf("the result is [%s]\n", result);
 		i++;
 	}
 
 	va_end(ap);
+	reslen = _printf_print(result);
+/*	free (result);*/
 
-
-	printf("the result is [%s]\n", result);
-	return (_printf_print(result));
+	return (reslen);
 }
 
 /**
