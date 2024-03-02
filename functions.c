@@ -13,7 +13,7 @@
 
 void *op_char(va_list ap, char *result)
 {
-	char s = va_arg(ap, char);
+	char s = va_arg(ap, int);
 
 	result = _strcat(result, &s);
 
