@@ -1,15 +1,15 @@
 /**
- * _strncat - write a function that concatenates two stings
+ * _strcatconst- a function that concatenates two stings
+ *
  * @dest : destination
  * @src : string
- * @n : end
  *
  * Return: dest
  */
 
-char *_strncat(char *dest, char *src, int n)
+char *_strcatconst(char *dest, const char *src)
 {
-	int a = 0;
+	int a = 0, b = 0;
 
 	while (*dest)
 	{
@@ -17,19 +17,15 @@ char *_strncat(char *dest, char *src, int n)
 		a++;
 	}
 
-	while (*src && n > 0)
+	while (*src)
 	{
 		*dest = *src;
 		dest++;
 		a++;
 		src++;
-		n--;
-		if (n == 0)
-		{
-		break;
-		}
+		b++;
 	}
-
+	*dest = '\0';
 	dest = (dest - a);
 
 	return (dest);
