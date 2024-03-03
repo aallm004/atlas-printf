@@ -42,6 +42,15 @@ void *op_string(va_list ap, char *result, int *reslen)
 	char *s = va_arg(ap, char *);
 	int s_len = _strlen(s);
 
+	
+	printf("inside string");
+	if (!s)
+	{
+		printf("pointer was null");
+		return (NULL);
+	}
+	printf("pointer not null");
+
 	if (s_len != 2) /* token length is always two right now */
 	{
 		*reslen = *reslen + (s_len - 2);
