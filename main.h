@@ -15,7 +15,7 @@
 typedef struct op
 {
 	char *op;
-	void *(*f)(va_list, char *);
+	void *(*f)(va_list, char *, int *);
 } op_t;
 
 
@@ -30,9 +30,9 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int _printf_print(char *);
 
-void *op_char(va_list, char *);
-void *op_string(va_list, char *);
-void *op_percent(va_list, char *);
-void *op_decimal(va_list, char *);
+void *op_char(va_list, char *, int *);
+void *op_string(va_list, char *, int *);
+void *op_percent(va_list, char *, int *);
+void *op_decimal(va_list, char *, int *);
 
 #endif

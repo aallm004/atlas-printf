@@ -10,8 +10,9 @@
 
 int _printf(const char *format, ...)
 {
-	int i, x;
-	int len, reslen;
+	int i, x, r;
+	int len;
+	int *reslen = &r;
 	va_list ap;
 	char *result;
 	op_t ops[] = {
@@ -22,24 +23,25 @@ int _printf(const char *format, ...)
 		{"%i", op_decimal},
 		{NULL, NULL}
 	};
-
+	
 	len = _strlenconst(format);
-
-	result = calloc(sizeof(char), len + 1);
+	*reslen = len;
+	result = calloc(sizeof(char), *reslen + 1);
+	
 	if (result == NULL)
 		return (0);
-
+	
 	va_start(ap, format);
 
 	i = 0;
 	while (i < len)
 	{
-		x = 0; x=x;
+		x = 0;
 		while ((ops[x].op))
 		{
 			if ((ops[x].op[0] == format[i]) && (ops[x].op[1] == format[i + 1]))
 			{
-				ops[x].f(ap, result);
+				ops[x].f(ap, result, reslen);
 				i++;
 				break;
 			}
@@ -52,10 +54,11 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(ap);
-	reslen = _printf_print(result);
+	*reslen = _printf_print(result);
+
 /*	free (result);*/
 
-	return (reslen);
+	return (*reslen);
 }
 
 /**

@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * op_char- a function to return a character from a valist
@@ -12,13 +10,15 @@
  *
  */
 
-void *op_char(va_list ap, char *result)
+void *op_char(va_list ap, char *result, int *reslen)
 {
 	char s = va_arg(ap, int);
+	
+	*reslen = *reslen - 1;
 
 	/* the token length is two and the char length is one. */
 	/* so shorten the memory by one byte. */
-	result = realloc(result, (_strlen(result) - 1));
+	result = realloc(result, *reslen + 1);
 	if (result == NULL)
 		return (NULL);
 
@@ -37,15 +37,17 @@ void *op_char(va_list ap, char *result)
  *
  */
 
-void *op_string(va_list ap, char *result)
+void *op_string(va_list ap, char *result, int *reslen)
 {
 	char *s = va_arg(ap, char *);
-	int len = _strlen(result);
-	int reslen = _strlen(s);
+	int s_len = _strlen(s);
 
-	if (reslen != 2) /* token length is always two right now */
+	if (s_len != 2) /* token length is always two right now */
 	{
-		result = realloc(result, len + (reslen - 2));
+		*reslen = *reslen + (s_len - 2);
+		result = realloc(result, *reslen + 1);
+		if (result == NULL)
+			return (NULL);
 	}
 
 	result = _strcat(result, s);
@@ -63,13 +65,14 @@ void *op_string(va_list ap, char *result)
  *
  */
 
-void *op_percent(va_list ap, char *result)
+void *op_percent(va_list ap, char *result, int *reslen)
 {
 	ap = ap;
+	*reslen = *reslen - 1;
 
 	/* the token length is two and the char length is one. */
 	/* so shorten the memory by one byte. */
-	result = realloc(result, (_strlen(result) - 1));
+	result = realloc(result, *reslen + 1);
 	if (result == NULL)
 		return (NULL);
 
@@ -88,11 +91,12 @@ void *op_percent(va_list ap, char *result)
  *
  */
 
-void *op_decimal(va_list ap, char *result)
+void *op_decimal(va_list ap, char *result, int *reslen)
 {
 	char s[] = "x";
 
 	ap = ap;
+	*reslen = *reslen;
 
 	result = _strcat(result, s);
 
