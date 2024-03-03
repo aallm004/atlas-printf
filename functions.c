@@ -6,22 +6,29 @@
  * @ap:     the valist
  * @result: the output string
  *
- * Return:  a string array of one character
+ * Return:  0 success, -1 memory allocation failure
  *
  */
 
-void *op_char(va_list ap, char *result, int *reslen)
+int op_char(va_list ap, char *result, int *reslen)
 {
-	char s = va_arg(ap, int);
-	
+	char s;
+	char *temp;
+
+	s = va_arg(ap, int);
+
+	/* the token length is two and the char length is one */
+	/* so shorten the memory by one byte */
 	*reslen = *reslen - 1;
+	temp = realloc(result, *reslen + 1); /* result len never includes
+						the null byte */
+	if (temp == NULL)
+	{
+		free (result);
+		return (-1);
+	}
 
-	/* the token length is two and the char length is one. */
-	/* so shorten the memory by one byte. */
-	result = realloc(result, *reslen + 1);
-	if (result == NULL)
-		return (NULL);
-
+	result = temp;
 	result = _strcat(result, &s);
 
 	return (0);
@@ -33,32 +40,39 @@ void *op_char(va_list ap, char *result, int *reslen)
  * @ap:       the va list
  * @result:   the output string
  *
- * Return:    a string array of characters
+ * Return:    0 success, -1 memory allocation failure
  *
  */
 
-void *op_string(va_list ap, char *result, int *reslen)
+int op_string(va_list ap, char *result, int *reslen)
 {
-	char *s = va_arg(ap, char *);
-	int s_len = _strlen(s);
+	char *s;
+	char *temp;
+	int s_len;
 
-	
-	printf("inside string");
-	if (!s)
+	s = va_arg(ap, char *);
+	if (s)
+		s_len = _strlen(s);
+	else
 	{
-		printf("pointer was null");
-		return (NULL);
+		result = _strcat(result, "(null)");
+		*reslen = *reslen + 4; /* (null) len six, %s two, diff four */
+		return (0);
 	}
-	printf("pointer not null");
 
 	if (s_len != 2) /* token length is always two right now */
 	{
 		*reslen = *reslen + (s_len - 2);
-		result = realloc(result, *reslen + 1);
-		if (result == NULL)
-			return (NULL);
+		temp = realloc(result, *reslen + 1); /* result len never includes
+							the null byte. */
+		if (temp == NULL)
+		{
+			free (result);
+			return (-1);
+		}
 	}
 
+	result = temp;
 	result = _strcat(result, s);
 
 	return (0);
@@ -70,21 +84,29 @@ void *op_string(va_list ap, char *result, int *reslen)
  * @ap:        the va list
  * @result:    the output string
  *
- * Return:     a string array of one %
+ * Return:     0 success, -1 memory allocation failure
  *
  */
 
-void *op_percent(va_list ap, char *result, int *reslen)
+int op_percent(va_list ap, char *result, int *reslen)
 {
+	char *temp;
+
 	ap = ap;
+
 	*reslen = *reslen - 1;
 
 	/* the token length is two and the char length is one. */
-	/* so shorten the memory by one byte. */
-	result = realloc(result, *reslen + 1);
-	if (result == NULL)
-		return (NULL);
+	/* shorten the memory by one byte */
+	temp = realloc(result, *reslen + 1); /* result len never includes
+						the null byte */
+	if (temp == NULL)
+	{
+		free (result);
+		return (-1);
+	}
 
+	result = temp;
 	result = _strcat(result, "%");
 
 	return (0);
@@ -96,11 +118,11 @@ void *op_percent(va_list ap, char *result, int *reslen)
  * @ap:        the va list
  * @result:    the output string
  *
- * Return:     a string array of numbers from the va list
+ * Return:     0 success, -1 memory allocation failure
  *
  */
 
-void *op_decimal(va_list ap, char *result, int *reslen)
+int op_decimal(va_list ap, char *result, int *reslen)
 {
 	char s[] = "x";
 

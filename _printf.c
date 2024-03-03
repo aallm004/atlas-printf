@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+
 /**
  * _printf - A function that produces output according to a format.
  *
@@ -41,8 +41,9 @@ int _printf(const char *format, ...)
 		{
 			if ((ops[x].op[0] == format[i]) && (ops[x].op[1] == format[i + 1]))
 			{
-				if (ops[x].f(ap, result, reslen))
+				if (ops[x].f(ap, result, reslen) == -1)
 					return (0);
+
 				i++;
 				break;
 			}
@@ -57,7 +58,7 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	*reslen = _printf_print(result);
 
-/*	free (result);*/
+	free (result);
 
 	return (*reslen);
 }
