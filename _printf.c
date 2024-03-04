@@ -53,7 +53,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(ap);
-	_printf_print(result);
+	_printf_print(result, reslen);
 
 	free (result);
 
@@ -64,20 +64,18 @@ int _printf(const char *format, ...)
  * _printf_print-  print the result to std out
  *
  * @result:        the thing to print
+ * @reslen:        how long the thing is
  *
  * Return:         0 success
  *
  */
 
-void _printf_print(char *r)
+void _printf_print(char *r, int *l)
 {
-	int i = 0;
+	int i;
 
-	while (r[i])
-	{
+	for (i = 0; i < (*l); i++)
 		_putchar(r[i]);
-		i++;
-	}
 
 	return;
 }

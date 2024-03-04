@@ -30,7 +30,7 @@ int _putchar(char c);
 char *_itoa(int num);
 
 int _printf(const char *format, ...);
-void _printf_print(char *);
+void _printf_print(char *, int *);
 
 int op_char(va_list, char *, int *);
 int op_string(va_list, char *, int *);
