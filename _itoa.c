@@ -41,18 +41,3 @@ char *_itoa(int num)
 
 	return (result);
 }
-
-int main(void)
-{
-	printf("[%s]\n", _itoa(-10));
-	printf("[%s]\n", itoa(-10));
-	printf("[%s]\n", _itoa(752));
-	printf("[%s]\n", itoa(752));
-	printf("[%s]\n", _itoa(1));
-	printf("[1]\n");
-	printf("[%s]\n", _itoa(0));
-	printf("[0]\n");
-	printf("[%s]\n", _itoa(2132243));
-	printf("[2132243]\n");
-	printf("[%s]\n)", _itoa(-0));
-}
