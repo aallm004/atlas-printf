@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- * itoa - converts int to a char string
+ * _itoa-  converts int to a char string
  *
- * @i: integer to be converted
+ * @num:   integer to be converted
  *
- * Return:
+ * Return: pointer to string
  */
 
 char *_itoa(int num)
@@ -34,7 +34,7 @@ char *_itoa(int num)
 		num = num / 10;
 	}
 
-	if (neg == '-') 
+	if (neg == '-')
 		array[i--] = neg;
 
 	result = array + i + 1;

@@ -21,22 +21,18 @@ int _printf(const char *format, ...)
 		{"%d", op_decimal}, {"%i", op_decimal}, {"%\0", op_nothing},
 		{NULL, NULL}
 	};
-	
+
 	if (format == NULL)
 		return (-1);
 	len = _strlenconst(format);
 	*reslen = len;
-	result = calloc(sizeof(char), (*reslen) + 1);	
+	result = calloc(sizeof(char), (*reslen) + 1);
 	if (!result)
 		return (0);
-	
 	va_start(ap, format);
-
-	i = 0;
-	while (i < len)
+	for (i = 0; i < len; i++)
 	{
-		x = 0;
-		while ((ops[x].op))
+		for (x = 0; (ops[x].op); x++)
 		{
 			if ((ops[x].op[0] == format[i]) && (ops[x].op[1] == format[i + 1]))
 			{
@@ -45,17 +41,14 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 			}
-			x++;
 		}
 		if (ops[x].op == NULL)
 			result = _strncatconst(result, (format + i), 1);
-		i++;
 	}
 
 	va_end(ap);
 	_printf_print(result, reslen);
-
-	free (result);
+	free(result);
 
 	return (*reslen);
 }
@@ -63,10 +56,8 @@ int _printf(const char *format, ...)
 /**
  * _printf_print-  print the result to std out
  *
- * @result:        the thing to print
- * @reslen:        how long the thing is
- *
- * Return:         0 success
+ * @r:             the thing to print
+ * @l:             how long the thing is
  *
  */
 
@@ -77,5 +68,4 @@ void _printf_print(char *r, int *l)
 	for (i = 0; i < (*l); i++)
 		_putchar(r[i]);
 
-	return;
 }

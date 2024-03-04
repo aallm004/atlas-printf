@@ -31,7 +31,7 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- * strcatc - a function that concatenates a char to a string
+ * _strcatc- a function that concatenates a char to a string
  *
  * @dest:    the string
  * @src:     the char
