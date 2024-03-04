@@ -8,12 +8,12 @@
  * Return: pointer to string
  */
 
-char *_itoa(int num)
+char *_itoa(long num)
 {
 	char neg = ' ';
-	char array[11];
+	char array[100];
 	char *result;
-	int i = 10;
+	int i = 99;
 
 	if (num < 0)
 	{

@@ -28,7 +28,7 @@ char *_strcat(char *, char *);
 char *_strcatc(char *dest, char src);
 char *_strappendconst(char *dest, const char *src, int n);
 int _putchar(char c);
-char *_itoa(int num);
+char *_itoa(long num);
 
 int _printf(const char *format, ...);
 void _printf_print(char *, int *);
