@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	int len;
 	int *reslen = &r;
 	va_list ap;
-	char *result;
 	op_t ops[] = {
 		{"%c", op_char}, {"%s", op_string}, {"%%", op_percent},
 		{"%d", op_decimal}, {"%i", op_decimal}, {"%\0", op_nothing},
@@ -26,9 +25,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	len = _strlenconst(format);
 	*reslen = len;
-	result = calloc(sizeof(char), (*reslen) + 1);
-	if (!result)
-		return (0);
+
 	va_start(ap, format);
 	for (i = 0; i < len; i++)
 	{
@@ -36,19 +33,17 @@ int _printf(const char *format, ...)
 		{
 			if ((ops[x].op[0] == format[i]) && (ops[x].op[1] == format[i + 1]))
 			{
-				if (ops[x].f(ap, result, reslen) == -1)
+				if (ops[x].f(ap, reslen) == -1)
 					return (-1);
 				i++;
 				break;
 			}
 		}
 		if (ops[x].op == NULL)
-			result = _strncatconst(result, (format + i), 1);
+			write(1, (format + i), 1);
 	}
 
 	va_end(ap);
-	_printf_print(result, reslen);
-	free(result);
 
 	return (*reslen);
 }
