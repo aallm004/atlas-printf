@@ -95,7 +95,7 @@ int op_decimal(va_list ap, int *reslen)
 
 	i = va_arg(ap, int);
 
-	s = itoa(i);
+	s = _itoa(i);
 	s_len = _strlen(s);
 
 	*reslen = *reslen + (s_len - 2);
