@@ -17,12 +17,9 @@ int op_char(va_list ap, char *result, int *reslen)
 
 	s = va_arg(ap, int);
 
-	result = realloc(result, (*reslen));
-	if (!result)
-		return (-1);
-
 	/* char is one byte less than token %c */
 	*reslen = *reslen - 1;
+
 	result = _strcatc(result, s);
 
 	return (0);
@@ -42,7 +39,6 @@ int op_char(va_list ap, char *result, int *reslen)
 int op_string(va_list ap, char *result, int *reslen)
 {
 	char *s;
-	char *temp;
 	int s_len;
 
 	s = va_arg(ap, char *);
@@ -52,23 +48,16 @@ int op_string(va_list ap, char *result, int *reslen)
 	{
 		result = _strcat(result, "(null)");
 	/* len of '(null)' six, len of '%s' two, difference +four */
-		*reslen = *reslen + 4;
+		*reslen = (*reslen) + 4;
 		return (0);
 	}
 
-	if (s_len != 2) /* token length is always two right now */
-	{
-		*reslen = *reslen + (s_len - 2);
-		/* result len never includes the null byte, add one */
-		temp = realloc(result, *reslen + 1);
-		if (temp == NULL)
-		{
-			free(result);
-			return (-1);
-		}
-	}
+	*reslen = *reslen + (s_len - 2);
+	/* result len never includes the null byte, add one */
+/*	result = realloc(result, (*reslen) + 1);*/
+	if (!result)
+		return (-1);
 
-	result = temp;
 	result = _strcat(result, s);
 
 	return (0);
