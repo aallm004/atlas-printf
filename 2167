@@ -1,0 +1,77 @@
+#!/bin/bash
+# check 2167 printf c s and percent
+
+cp main.h checker
+
+rm main_1.c -f
+rm main_2.c -f
+rm main_3.c -f
+rm main_4.c -f
+rm main_5.c -f
+rm main_6.c -f
+rm main_7.c -f
+rm main_8.c -f
+rm main_9.c -f
+rm main_10.c -f
+rm main_11.c -f
+rm main_12.c -f
+rm main_13.c -f
+rm main_14.c -f
+rm main_15.c -f
+rm main_16.c -f
+rm main_17.c -f
+rm main_18.c -f
+
+gcc -o 2167_1 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_1.c
+./2167_1
+
+gcc -o 2167_2 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_2.c
+./2167_2
+
+gcc -o 2167_3 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_3.c
+./2167_3
+
+gcc -o 2167_4 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_4.c
+./2167_4
+
+gcc -o 2167_5 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_5.c
+./2167_5
+
+gcc -o 2167_6 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_6.c
+./2167_6
+
+gcc -o 2167_7 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_7.c
+./2167_7
+
+gcc -o 2167_8 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_8.c
+./2167_8
+
+gcc -o 2167_9 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_9.c
+./2167_9
+
+gcc -o 2167_10 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_10.c
+./2167_10
+
+gcc -o 2167_11 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_11.c
+./2167_11
+
+gcc -o 2167_12 -Wall -Werror -Wextra -pedantic -Wno-format -Wno-overlength-strings -std=gnu89  *.c checker/main_12.c
+./2167_12
+
+gcc -o 2167_13 -Wall -Werror -Wextra -pedantic -Wno-format -Wno-overlength-strings -std=gnu89  *.c checker/main_13.c
+./2167_13
+
+gcc -o 2167_14 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_14.c
+./2167_14
+
+gcc -o 2167_15 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_15.c
+./2167_15
+
+gcc -o 2167_16 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_16.c
+./2167_16
+
+gcc -o 2167_17 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_17.c
+./2167_17
+
+gcc -o 2167_18 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c checker/main_18.c
+./2167_18

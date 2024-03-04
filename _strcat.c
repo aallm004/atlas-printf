@@ -29,3 +29,33 @@ char *_strcat(char *dest, char *src)
 
 	return (dest);
 }
+
+/**
+ * strcatc - a function that concatenates a char to a string
+ *
+ * @dest:    the string
+ * @src:     the char
+ *
+ * Return:   dest pointer
+ *
+ */
+
+char *_strcatc(char *dest, char src)
+{
+	int a = 0;
+
+	while (*dest)
+	{
+		dest++;
+		a++;
+	}
+
+	*dest = src;
+	dest++;
+	a++;
+
+	*dest = '\0';
+	dest = (dest - a);
+
+	return (dest);
+}
