@@ -96,7 +96,7 @@ int op_decimal(va_list ap, int *reslen)
 	i = va_arg(ap, int);
 	s = _itoa(i);
 	*reslen = *reslen - 2;
-	
+
 	for (i = 0; (s[i] != '\0'); i++)
 	{
 		write(1, (s + i), 1);
