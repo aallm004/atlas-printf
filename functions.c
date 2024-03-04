@@ -91,15 +91,17 @@ int op_percent(va_list ap, int *reslen)
 int op_decimal(va_list ap, int *reslen)
 {
 	char *s;
-	int i, s_len;
+	int i;
 
-	s = _itoa(va_arg(ap, long));
-	s_len = _strlen(s);
-
-	*reslen = *reslen + (s_len - 2);
+	i = va_arg(ap, int);
+	s = _itoa(i);
+	*reslen = *reslen - 2;
 	
-	for (i = 0; i < s_len; i++)
+	for (i = 0; (s[i] != '\0'); i++)
+	{
 		write(1, (s + i), 1);
+		*reslen = *reslen + 1;
+	}
 
 	return (0);
 }

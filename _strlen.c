@@ -3,18 +3,18 @@
 /**
  * _strlen-  determine the length of a string
  *
- * @s:       the string to find the longness of
+ * @start    the string to find the longness of
  *
  * Return:   the longness of the string
  *
  */
 
-int _strlen(char *s)
+int _strlen(char *start)
 {
-	int pos = 0;
+    int len = 0;
+    
+    while (start[len] != '\0')
+        len++;
 
-	while (s[pos] != 0)
-		pos++;
-
-	return (pos);
+    return (len);
 }

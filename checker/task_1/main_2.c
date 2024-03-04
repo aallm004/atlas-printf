@@ -18,4 +18,5 @@ int main(void)
 		fflush(stdout);
 		return (1);
 	}
+	return (0);
 }

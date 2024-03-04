@@ -9,18 +9,11 @@
  * Return: pointer to string
  */
 
-char *_itoa(long num)
+char *_itoa(int num)
 {
-	char neg = ' ';
-	char array[10];
+	char array[11];
 	char *result;
-	int i = 9;
-
-	if (num < 0)
-	{
-		num *= -1;
-		neg = '-';
-	}
+	int i = 10;
 
 	if (num == 0)
 	{
@@ -29,22 +22,24 @@ char *_itoa(long num)
 		return (result);
 	}
 
-	while (num)
+	if (num > 0)
 	{
-		array[i--] = (num % 10) + '0';
-		num = num / 10;
+		while (num)
+		{
+			array[i--] = '0' + (num % 10);
+			num = num / 10;
+		}
+	}
+	else
+	{
+		while (num)
+		{
+			array[i--] = '0' - (num % 10);
+			num = num / 10;
+		}
+		array[i--] = '-';
 	}
 
-	if (neg == '-')
-		array[i--] = neg;
-
 	result = array + i + 1;
-
 	return (result);
-}
-int main(void)
-{
-	printf("[%s]",_itoa(-1024));
-	printf("[%s]",_itoa(INT_MAX));
-	return (0);
 }
