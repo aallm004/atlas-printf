@@ -11,9 +11,9 @@
 char *_itoa(long num)
 {
 	char neg = ' ';
-	char array[100];
+	char array[10];
 	char *result;
-	int i = 99;
+	int i = 9;
 
 	if (num < 0)
 	{
