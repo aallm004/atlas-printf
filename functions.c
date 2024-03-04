@@ -38,7 +38,7 @@ int op_string(va_list ap, int *reslen)
 {
 	char *s;
 	int s_len, i;
-	
+
 	s = va_arg(ap, char *);
 	if (!s)
 		s = "(null)";
@@ -46,7 +46,7 @@ int op_string(va_list ap, int *reslen)
 	s_len = _strlen(s);
 
 	*reslen = *reslen + (s_len - 2);
-	
+
 	for (i = 0; i < s_len; i++)
 		write(1, (s + i), 1);
 
@@ -73,7 +73,7 @@ int op_percent(va_list ap, int *reslen)
 	/* shorten the output by one byte */
 	*reslen = *reslen - 1;
 
-	write(1, &percent, 1);;
+	write(1, &percent, 1);
 
 	return (0);
 }
