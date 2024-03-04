@@ -1,0 +1,190 @@
+#!/bin/bash
+# check 2167 _printf  c s d i and percent
+
+# checker main files require main.h.
+cp ../main.h task_0
+cp ../main.h task_1
+
+# clean up anything you left behind during your teting
+rm ../main_[0-9].c -f
+rm ../main_1[0-9].c -f
+rm ../main_2[0-3].c -f
+
+if [[ "$1" = "" || "$1" = "0" ]]; then
+# compile and run with each main file in task 0
+
+echo "0/1"
+gcc -o 2167_0_1 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_1.c
+./2167_0_1
+
+echo -e "\n0/2"
+gcc -o 2167_0_2 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_2.c
+./2167_0_2
+
+echo "0/3"
+gcc -o 2167_0_3 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_3.c
+./2167_0_3
+
+echo "0/4"
+gcc -o 2167_0_4 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_4.c
+./2167_0_4
+
+echo "0/5"
+gcc -o 2167_0_5 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_5.c
+./2167_0_5
+
+echo "0/6"
+gcc -o 2167_0_6 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_6.c
+./2167_0_6
+
+echo "0/7"
+gcc -o 2167_0_7 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_7.c
+./2167_0_7
+
+echo "0/8"
+gcc -o 2167_0_8 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_8.c
+./2167_0_8
+
+echo -e "\n0/9"
+gcc -o 2167_0_9 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_9.c
+./2167_0_9
+
+echo "0/10"
+gcc -o 2167_0_10 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_10.c
+./2167_0_10
+
+echo "0/11"
+gcc -o 2167_0_11 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_11.c
+./2167_0_11
+
+echo -e "\n0/12"
+gcc -o 2167_0_12 -Wall -Werror -Wextra -pedantic -Wno-format -Wno-overlength-strings -std=gnu89  ../*.c task_0/main_12.c
+./2167_0_12
+
+echo "0/13"
+gcc -o 2167_0_13 -Wall -Werror -Wextra -pedantic -Wno-format -Wno-overlength-strings -std=gnu89  ../*.c task_0/main_13.c
+./2167_0_13
+
+echo "0/14"
+gcc -o 2167_0_14 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_14.c
+./2167_0_14
+
+echo "0/15"
+gcc -o 2167_0_15 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_15.c
+./2167_0_15
+
+echo "0/16"
+gcc -o 2167_0_16 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_16.c
+./2167_0_16
+
+echo "0/17"
+gcc -o 2167_0_17 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_17.c
+./2167_0_17
+
+echo "0/18"
+gcc -o 2167_0_18 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_0/main_18.c
+./2167_0_18
+
+fi
+
+if [[ "$1" = "" || "$1" = "1" ]]; then
+# compile and run with each main file in task 1
+
+echo "1/0"
+gcc -o 2167_1_0 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_0.c
+./2167_1_0
+
+echo -e "\n1/1"
+gcc -o 2167_1_1 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_1.c
+./2167_1_1
+
+echo -e "\n1/2"
+gcc -o 2167_1_2 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_2.c
+./2167_1_2
+
+echo -e "\n1/3"
+gcc -o 2167_1_3 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_3.c
+./2167_1_3
+
+echo -e "\n1/4"
+gcc -o 2167_1_4 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_4.c
+./2167_1_4
+
+echo -e "\n1/5"
+gcc -o 2167_1_5 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_5.c
+./2167_1_5
+
+echo -e "\n1/6"
+gcc -o 2167_1_6 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_6.c
+./2167_1_6
+
+echo -e "\n1/7"
+gcc -o 2167_1_7 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_7.c
+./2167_1_7
+
+echo "1/8"
+gcc -o 2167_1_8 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_8.c
+./2167_1_8
+
+echo "1/9"
+gcc -o 2167_1_9 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_9.c
+./2167_1_9
+
+echo "1/10"
+gcc -o 2167_1_10 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_10.c
+./2167_1_10
+
+echo -e "\n1/11"
+gcc -o 2167_1_11 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_11.c
+./2167_1_11
+
+echo -e "\n1/12"
+gcc -o 2167_1_12 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_12.c
+./2167_1_12
+
+echo -e "\n1/13"
+gcc -o 2167_1_13 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_13.c
+./2167_1_13
+
+echo -e "\n1/14"
+gcc -o 2167_1_14 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_14.c
+./2167_1_14
+
+echo -e "\n1/15"
+gcc -o 2167_1_15 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_15.c
+./2167_1_15
+
+echo -e "\n1/16"
+gcc -o 2167_1_16 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_16.c
+./2167_1_16
+
+echo -e "\n1/17"
+gcc -o 2167_1_17 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_17.c
+./2167_1_17
+
+echo "1/18"
+gcc -o 2167_1_18 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_18.c
+./2167_1_18
+
+echo "1/19"
+gcc -o 2167_1_19 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_19.c
+./2167_1_19
+
+echo "1/20"
+gcc -o  2167_1_20 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_20.c
+./2167_1_20
+
+echo "1/21"
+gcc -o 2167_1_21 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_21.c
+./2167_1_21
+
+echo "1/22"
+gcc -o 2167_1_22 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_22.c
+./2167_1_22
+
+echo -e "\n1/23"
+gcc -o 2167_1_23 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  ../*.c task_1/main_23.c
+./2167_1_23
+echo -e "\n"
+
+fi
