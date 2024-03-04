@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * _itoa-  converts int to a char string
@@ -40,4 +41,10 @@ char *_itoa(long num)
 	result = array + i + 1;
 
 	return (result);
+}
+int main(void)
+{
+	printf("[%s]",_itoa(-1024));
+	printf("[%s]",_itoa(INT_MAX));
+	return (0);
 }

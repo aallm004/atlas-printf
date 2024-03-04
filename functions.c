@@ -92,14 +92,12 @@ int op_decimal(va_list ap, int *reslen)
 {
 	char *s;
 	int i, s_len;
-	long l;
 
-	l = va_arg(ap, long);
-
-	s = _itoa(l);
+	s = _itoa(va_arg(ap, long));
 	s_len = _strlen(s);
 
 	*reslen = *reslen + (s_len - 2);
+	
 	for (i = 0; i < s_len; i++)
 		write(1, (s + i), 1);
 
