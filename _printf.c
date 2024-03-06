@@ -11,35 +11,35 @@
 
 int _printf(const char *format, ...)
 {
-	int i, x, r;
+	int i, r;
 	int len;
 	int *reslen = &r;
 	va_list ap;
-	op_t ops[] = {
-		{"%c", op_char}, {"%s", op_string}, {"%%", op_percent},
-		{"%d", op_decimal}, {"%i", op_decimal}, {"%\0", op_nothing},
-		{NULL, NULL}
-	};
+	int (*func)(va_list, int *);
 
 	if (format == NULL)
 		return (-1);
+
 	len = _strlenconst(format);
 	*reslen = len;
 
 	va_start(ap, format);
 	for (i = 0; i < len; i++)
 	{
-		for (x = 0; (ops[x].op); x++)
+		if (format[i] == '%')
 		{
-			if ((ops[x].op[0] == format[i]) && (ops[x].op[1] == format[i + 1]))
+			if (format[i + 1] == '\0')
+				return (-1);
+
+			func = get_printf_function(format[i + 1]);
+			if (func)
 			{
-				if (ops[x].f(ap, reslen) == -1)
+				if (func(ap, reslen) == -1)
 					return (-1);
-				i++;
-				break;
 			}
+			i++;
 		}
-		if (ops[x].op == NULL)
+		else
 			write(1, (format + i), 1);
 	}
 

@@ -15,7 +15,7 @@
 
 typedef struct op
 {
-	char *op;
+	char op;
 	int (*f)(va_list, int *);
 } op_t;
 
@@ -33,10 +33,12 @@ char *_itoa(int num);
 int _printf(const char *format, ...);
 void _printf_print(char *, int *);
 
+int (*get_printf_function(char))(va_list, int *);
+
 int op_char(va_list, int *);
 int op_string(va_list, int *);
-int op_percent(va_list, int *);
 int op_decimal(va_list, int *);
-int op_nothing(va_list, int *);
+int op_percent(va_list, int *);
+int op_rotate(va_list, int *);
 
 #endif

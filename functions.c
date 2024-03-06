@@ -37,18 +37,16 @@ int op_char(va_list ap, int *reslen)
 int op_string(va_list ap, int *reslen)
 {
 	char *s;
-	int s_len, i;
+	int len;
 
 	s = va_arg(ap, char *);
 	if (!s)
 		s = "(null)";
 
-	s_len = _strlen(s);
+	len = _strlen(s);
+	*reslen = *reslen + (len - 2);
 
-	*reslen = *reslen + (s_len - 2);
-
-	for (i = 0; i < s_len; i++)
-		write(1, (s + i), 1);
+	write(1, s, len);
 
 	return (0);
 }
@@ -104,23 +102,4 @@ int op_decimal(va_list ap, int *reslen)
 	}
 
 	return (0);
-}
-
-/**
- * op_nothing- handle percent followed by null
- *
- * @ap:        the va list
- * @reslen:    pointer to the length of the output string
- *
- * Return:     -1; this function shoud not happen
- *
- */
-
-int op_nothing(va_list ap,  int *reslen)
-{
-	/* %\0 isn't supported by printf, return -1 */
-	ap = ap;
-	*reslen = *reslen;
-
-	return (-1);
 }
