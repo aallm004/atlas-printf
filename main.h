@@ -19,7 +19,7 @@ typedef struct op
 	int (*f)(va_list, int *);
 } op_t;
 
-
+char *_itoa(int num);
 int _strlenconst(const char *);
 int _strlen(char *);
 char *_strcatconst(char *, const char *);
@@ -28,7 +28,8 @@ char *_strcat(char *, char *);
 char *_strcatc(char *dest, char src);
 char *_strappendconst(char *dest, const char *src, int n);
 int _putchar(char c);
-char *_itoa(int num);
+char rot13_char(char);
+char *rot13_string(char *s);
 
 int _printf(const char *format, ...);
 void _printf_print(char *, int *);
