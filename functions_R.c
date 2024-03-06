@@ -3,8 +3,8 @@
 /**
  * op_rotate- rot13 a string
  *
- * @ap        the va list
- * @reslen    a pointer to the length of the result
+ * @ap:       the va list
+ * @reslen:   a pointer to the length of the result
  *
  * Return:    0 success
  *
