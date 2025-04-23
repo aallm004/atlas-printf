@@ -1,8 +1,5 @@
 # _printf: Building a Custom Print Function from Scratch
 
-![Printf Output Example](https://i.imgur.com/YourScreenshot.png)
-*Sample output of our custom _printf implementation showing various format specifiers in action*
-
 ## Project Overview
 **_printf** is not just another school project—it's a deep dive into the inner workings of one of C's most powerful and complex functions. By recreating `printf` from scratch, this project demonstrates advanced understanding of:
 - Variadic functions in C
