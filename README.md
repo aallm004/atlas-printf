@@ -10,17 +10,6 @@ Created by:
 - Abigail Aleman: [LinkedIn](https://www.linkedin.com/in/abigailraleman/)
 - Jeremy Mitts: [LinkedIn](https://www.linkedin.com/in/jeremy-mitts/)
 
-## The Journey of Building _printf
-
-###Development process:
-1. **Research Phase**: Spent days reading the actual `printf` man pages, GNU C Library source code, and various articles to understand how the original function works
-2. **Planning**: Carefully mapped out the architecture, deciding on a modular approach with function pointers
-3. **Core Implementation**: Built the basic parsing engine that identifies format specifiers
-4. **Handler Development**: Created individual handlers for each format specifier
-5. **Edge Case Hunting**: Rigorously tested with unusual inputs to ensure robustness
-6. **Optimization**: Refined the buffer management to minimize system calls
-
-
 ## Implemented Features
 
 - **Basic Format Specifiers**:
