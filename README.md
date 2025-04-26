@@ -1,17 +1,13 @@
 # _printf: Building a Custom Print Function from Scratch
 
 ## Project Overview
-**_printf** is not just another school project—it's a deep dive into the inner workings of one of C's most powerful and complex functions. By recreating `printf` from scratch, this project demonstrates advanced understanding of:
+**_printf** is one of C's most powerful and complex functions. By recreating `printf` from scratch, this project demonstrates advanced understanding of:
 - Variadic functions in C
 - Memory management and string manipulation
 - Complex parsing algorithms
 - Modular code design
 
-## About the Developers
-
-Hello! We're Abigail Allman and Jeremy Mitts, a team of passionate software engineers with a love for low-level programming and systems design. This project represents our journey into understanding how fundamental C library functions actually work under the hood.
-
-Connect with us:
+Created by:
 - Abigail Aleman: [LinkedIn](https://www.linkedin.com/in/abigailraleman/)
 - Jeremy Mitts: [LinkedIn](https://www.linkedin.com/in/jeremy-mitts/)
 
@@ -44,30 +40,7 @@ Each step presented unique challenges that pushed my understanding of C programm
   - Proper handling of NULL string arguments
   - Comprehensive error checking 
 
-## Future Enhancements
-
-- **Field Width Specifiers**: Support for controlling output width (in progress)
-- **Precision Specifiers**: For controlling decimal precision
-- **Length Modifiers**: Support for `l`, `h`, etc.
-- **Flag Characters**: Implementing `-`, `+`, `0`, ` `, and `#` flags
-- **Binary Specifier**: Adding a custom `%b` for binary output
-- **Floating Point Support**: Implementing `%f` and related specifiers
-
-## Most Challenging Aspects
-
-### 1. The Variadic Function Rabbit Hole
-Working with C's va_list and variadic functions proved more complex than anticipated. Ensuring type safety while handling unknown argument counts required careful design and testing.
-
-### 2. Buffer Management Nightmare
-Implementing an efficient buffer system that minimizes system calls while correctly handling all edge cases (especially around buffer boundaries) was surprisingly difficult.
-
-### 3. The Pointer Format Specifier
-Implementing `%p` for pointer output required deep understanding of memory representation and platform-specific considerations.
-
-### 4. The Great Segfault Hunt of 2025
-Tracking down memory access violations and segmentation faults taught me more about debugging than any other project. One particularly elusive bug took three days to track down to an off-by-one error in the buffer management.
-
-## 🛠️ Technical Details
+## 🛠Technical Details
 
 ### Prototype
 ```c
