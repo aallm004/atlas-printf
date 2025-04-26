@@ -1,7 +1,6 @@
 # _printf: Building a Custom Print Function from Scratch
 
 ## Project Overview
-**_printf** is one of C's most powerful and complex functions. By recreating `printf` from scratch, this project demonstrates advanced understanding of:
 - Variadic functions in C
 - Memory management and string manipulation
 - Complex parsing algorithms
@@ -13,8 +12,7 @@ Created by:
 
 ## The Journey of Building _printf
 
-What started as a straightforward assignment quickly evolved into a fascinating exploration of C's capabilities. The development process followed these stages:
-
+###Development process:
 1. **Research Phase**: Spent days reading the actual `printf` man pages, GNU C Library source code, and various articles to understand how the original function works
 2. **Planning**: Carefully mapped out the architecture, deciding on a modular approach with function pointers
 3. **Core Implementation**: Built the basic parsing engine that identifies format specifiers
@@ -22,7 +20,6 @@ What started as a straightforward assignment quickly evolved into a fascinating 
 5. **Edge Case Hunting**: Rigorously tested with unusual inputs to ensure robustness
 6. **Optimization**: Refined the buffer management to minimize system calls
 
-Each step presented unique challenges that pushed my understanding of C programming to new levels.
 
 ## Implemented Features
 
@@ -40,7 +37,7 @@ Each step presented unique challenges that pushed my understanding of C programm
   - Proper handling of NULL string arguments
   - Comprehensive error checking 
 
-## 🛠Technical Details
+## Technical Details
 
 ### Prototype
 ```c
